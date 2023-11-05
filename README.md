@@ -1,6 +1,6 @@
 # FocusX
 
-- Enable focus mode on Chrome's official Extensions and Chrome Web Store documentation.
+- A simple chrome extension to enable focus mode on Chrome's official Extensions and Chrome Web Store documentation.
 - Find the extension on the chrome store
 
 ## Feedback
