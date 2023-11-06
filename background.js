@@ -1,8 +1,17 @@
-const extensions = 'https://developer.chrome.com/docs/extensions'
-const webstore = 'https://developer.chrome.com/docs/webstore'
+const blockedWebsites = [
+  'https://developer.chrome.com/docs/extensions',
+  'https://developer.chrome.com/docs/webstore',
+  'https://developer.mozilla.org',
+  'https://www.w3schools.com',
+  'https://stackoverflow.com',
+  'https://github.com/',
+  'https://www.youtube.com/',
+  'https://www.google.com/',
+  // Add more websites here as needed
+];
 
 chrome.action.onClicked.addListener(async (tab) => {
-  if (tab.url.startsWith(extensions) || tab.url.startsWith(webstore)) {
+  if (blockedWebsites.some((url) => tab.url.startsWith(url))) {
     // Retrieve the action badge to check if the extension is 'ON' or 'OFF'
     const prevState = await chrome.action.getBadgeText({ tabId: tab.id });
     // Next state will always be the opposite
